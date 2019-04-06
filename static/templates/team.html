@@ -1,0 +1,52 @@
+<div class="standing-board" ng-controller="mainCtrl">
+  <header>
+    <!--       <div class="stats">
+        <p><span>drivers: </span> {{ drivers.length }}</p>
+        <p><span>Total points: </span> 100</p>
+      </div> -->
+    <h1>Driver Standings</h1>
+  </header>
+  <a href="/">Team</a>
+
+  <div class="drivers-header list-header">
+    <div class="driver-info">
+      <p>Name</p>
+      <p>Country</p>
+      <p>Team</p>
+    </div>
+    <div class="points">
+      <p>Points</p>
+    </div>
+  </div>
+  <!--   <div
+    class="drivers-header list"
+    ng-repeat="driver in drivers | orderBy: ['-points', 'driver']"
+  >
+    <div class="driver-info">
+      <p>
+        <button class="remove-driver" ng-click="deleteDriver(driver, $index)">
+          ✖
+        </button>
+        <a href="#!/{{ driver.team }}">{{ driver.driver }}</a>
+      </p>
+      <p>{{ driver.country }}</p>
+      <p>{{ driver.team }}</p>
+    </div>
+
+    <div class="counter">
+      <button
+        class="counter-action decrement"
+        ng-click="driver.points = driver.points - 1"
+      >
+        -
+      </button>
+      <span class="counter-score">{{ driver.points }}</span>
+      <button
+        class="counter-action increment"
+        ng-click="driver.points = driver.points + 1"
+      >
+        +
+      </button>
+    </div>
+  </div> -->
+</div>
