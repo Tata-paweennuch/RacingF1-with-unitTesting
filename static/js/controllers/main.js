@@ -3,58 +3,26 @@
 angular
   .module("standingListApp")
   .controller("mainCtrl", function(dataService, $scope, $location, $timeout) {
-/*    This will reload fresh from zero after returning to home page
-
-    var poll = function() {
-          $scope.drivers = dataService.getDrivers();
-          $timeout(poll, 1000);
-        };
-        poll(); 
-*/
-
-
-/*     dataService.getDrivers(function(response) {
+/*     
+    dataService.getDrivers(function(response) {
       $scope.drivers = response.data;
 
       const randomIndex = Math.floor(Math.random() * $scope.drivers.length); 
       console.log(randomIndex);
       $scope.drivers[randomIndex].points = $scope.drivers[randomIndex].points +1
-     
     }); 
 */
 
     $scope.drivers = dataService.getDrivers();
-    dataService.setInterval1(); 
+    dataService.startInterval(); 
  
-    $scope.setInterval1 = function() {
-      $timeout(function() {
-        $scope.drivers = dataService.getDrivers();
-        // dataService.setInterval();
-        $scope.setInterval1();
-      }, 1000)
-    }
-    //  $scope.setInterval1();
-
-
-/*     $scope.setInterval = function() {
-      $timeout(function() {
-        const randomIndex = Math.floor(Math.random() * $scope.drivers.length); 
-        console.log(randomIndex);
-        $scope.drivers[randomIndex].points = $scope.drivers[randomIndex].points +1
-        $scope.setInterval();
-      }, 1000)
-    }; */
-
-    // $scope.setInterval();
-
-    dataService.getTeams(function(response) {
+    $scope.teams = dataService.getTeams();
+/*     dataService.getTeams(function(response) {
       $scope.teams = response.data;
-    });
+    }); */
 
     $scope.deleteDriver = function(driver) {
       dataService.deleteDriver(driver);
-      // const i = $scope.drivers.findIndex(driverItem => driverItem.driver === driver.driver);
-      // $scope.drivers.splice(i, 1);
     };
 
     $scope.sumPoints = function() {
@@ -68,12 +36,6 @@ angular
     $scope.getTeam = function(teamId) {
       dataService.stopInterval()
       $location.url("/team/" + teamId);
-/*       $scope.drivers = $scope.drivers.filter(driver => driver.team == team);
-      $scope.teamNum = team;
-      $scope.detail = true;
-      dataService.getTeamDetail(team, function(response) {
-        $scope.teamDetail = response.data;
-      }); */
     };
 
     $scope.getTeamName = function(teamID) {

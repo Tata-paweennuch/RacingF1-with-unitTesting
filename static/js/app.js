@@ -6,20 +6,17 @@ angular
         templateUrl: "/static/templates/drivers.html",
         controller: "mainCtrl",
         resolve: {
-          loadData: function(dataService){
-            // dataService.initDrivers();
-            return dataService.loadData();
+          fetchAllDrivers: function(dataService) {
+            return dataService.initDrivers();
+          },
+          fetchAllTeams: function(dataService) {
+            return dataService.initTeams();
           }
         } 
       })
       .when("/team/:id", {
         templateUrl: "/static/templates/team.html",
         controller: "teamMemberCtrl"
-/*         resolve: {
-          driversList: function($http, dataService){
-            dataService.initDrivers(); 
-          }
-        } */
       })
       .otherwise({ redirectTo: "/" });
 

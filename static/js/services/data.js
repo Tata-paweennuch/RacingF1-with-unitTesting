@@ -2,12 +2,13 @@
 
 angular.module("standingListApp").service("dataService", function($q, $http, $timeout, $interval) {
   var drivers = [];
+  var teams = [];
 
   var interval;
 
   var defer = false;
 
-  this.loadData = function() {
+  this.initDrivers = function() {
     if(!defer){
       defer = $q.defer();
       $http.get("/api/standings.json").success(function(data) {
@@ -17,7 +18,7 @@ angular.module("standingListApp").service("dataService", function($q, $http, $ti
       });
     }
     return defer.promise;
-  }  
+  };  
 
 /*   this.fetchData = function() {
       return $http({method:"GET", url:"/api/standings.json"}).then(function(result){
@@ -28,62 +29,50 @@ angular.module("standingListApp").service("dataService", function($q, $http, $ti
   }; */
 
   this.getDrivers = function() { 
-    console.log(drivers);
-      
     return drivers;
-  }
+  };
 
-/* 
-  this.getDrivers = function(callback) {
-    $http.get("/api/standings.json")
-      .then(callback)
-    // $http.get("../data/drivers.json").then(callback);
-  }; */
 
-  this.setInterval1 = function() {
+  this.startInterval = function() {
     interval = $interval(function() {
       const randomIndex = Math.floor(Math.random() * drivers.length); 
       console.log(randomIndex);
       drivers[randomIndex].points++
-      // drivers[randomIndex].points = drivers[randomIndex].points +1
-      // this.setInterval();
       console.log(drivers);
-      
-    }, 3000)
+    }, 1500)
   };
-
-/*     if(drivers !== []) {
-    this.setInterval1();
-  } */
 
 
   this.stopInterval = function() {
     $interval.cancel(interval);
+  };
+
+
+  this.initTeams = function() {
+    $http.get("/api/teams.json")
+    .success(function(data) {
+      return (teams = data);
+    })
+  };
+
+
+  this.getTeams = function() {
+    return teams;
   }
 
-  this.getTeams = function(callback) {
+/*   this.getTeams = function(callback) {
     $http.get("/api/teams.json").then(callback);
-  };
+  }; */
 
 
   this.getTeamDetail = function(id, callback) {
     $http.get("/api/team/" + id + ".json").then(callback)
-  }
+  };
 
 
   this.deleteDriver = function(deleteThisDriver) {
     console.log("The " + deleteThisDriver.driver + " driver has been deleted!");
-    // other logic
     const i = drivers.findIndex(driver => driver.driver === deleteThisDriver.driver);
     drivers.splice(i, 1);
   };
 });
-
-
-    // var promise = $http.get("/api/standings.json")
-    // .success(function(response) {
-    //   drivers = response.data;
-    //   console.log(drivers);
-    //   return drivers;      
-    // })
-    // return promise;
