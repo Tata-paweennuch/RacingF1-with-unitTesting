@@ -1,35 +1,27 @@
 "use strict";
 
-angular.module("standingListApp").service("dataService", function($q, $http, $timeout, $interval) {
+angular.module("standingListApp").service("dataService", function($http, $timeout, $interval) {
   var drivers = [];
 
   var interval;
 
-  var defer = false;
+  this.initDrivers = function() {
+    $http.get("/api/standings.json")
+    .then(function(response) {
+      return (drivers = response.data);
+      // return driver;
+      // console.log(drivers);
+    })
 
-  this.loadData = function() {
-    if(!defer){
-      defer = $q.defer();
-      $http.get("/api/standings.json").success(function(data) {
-          drivers = data;
-          console.log(drivers);
-          defer.resolve();
-      });
-    }
-    return defer.promise;
-  }  
+/*     const randomIndex = Math.floor(Math.random() * drivers.length); 
+    console.log(randomIndex);
+    drivers[randomIndex].points = drivers[randomIndex].points +1
+ */
+    this.setInterval1() 
+  };
 
-/*   this.fetchData = function() {
-      return $http({method:"GET", url:"/api/standings.json"}).then(function(result){
-          drivers = result.data
-          // console.log(drivers);   Work!!!
-          return result.data;
-      })      
-  }; */
 
-  this.getDrivers = function() { 
-    console.log(drivers);
-      
+  this.getDrivers = function() {   
     return drivers;
   }
 
@@ -51,11 +43,6 @@ angular.module("standingListApp").service("dataService", function($q, $http, $ti
       
     }, 3000)
   };
-
-/*     if(drivers !== []) {
-    this.setInterval1();
-  } */
-
 
   this.stopInterval = function() {
     $interval.cancel(interval);

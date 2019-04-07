@@ -2,7 +2,8 @@
 
 angular
   .module("standingListApp")
-  .controller("mainCtrl", function(dataService, $scope, $location, $timeout) {
+  .controller("mainCtrl", function(dataService, $scope, $location, $timeout, $route) {
+
 /*    This will reload fresh from zero after returning to home page
 
     var poll = function() {
@@ -12,6 +13,7 @@ angular
         poll(); 
 */
 
+    // $route.reload();
 
 /*     dataService.getDrivers(function(response) {
       $scope.drivers = response.data;
@@ -22,9 +24,13 @@ angular
      
     }); 
 */
+  
+    
+    // dataService.initDrivers();    
 
     $scope.drivers = dataService.getDrivers();
-    dataService.setInterval1(); 
+    console.log($scope.drivers);
+    // dataService.setInterval(); 
  
     $scope.setInterval1 = function() {
       $timeout(function() {
