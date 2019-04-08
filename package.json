@@ -1,0 +1,35 @@
+{
+  "name": "racingf1-unittesting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "angular-mocks": "^1.4.3",
+    "generator-karma": "^2.0.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "^0.0.32",
+    "phantomjs-prebuilt": "^2.1.16"
+  },
+  "devDependencies": {
+    "jasmine-core": "^3.4.0",
+    "karma": "^4.0.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tata-paweennuch/RacingF1-unitTesting.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tata-paweennuch/RacingF1-unitTesting/issues"
+  },
+  "homepage": "https://github.com/Tata-paweennuch/RacingF1-unitTesting#readme"
+}

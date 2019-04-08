@@ -3,15 +3,6 @@
 angular
   .module("standingListApp")
   .controller("mainCtrl", function(dataService, $scope, $location, $timeout, $q) {
-/*     
-    dataService.getDrivers(function(response) {
-      $scope.drivers = response.data;
-
-      const randomIndex = Math.floor(Math.random() * $scope.drivers.length); 
-      console.log(randomIndex);
-      $scope.drivers[randomIndex].points = $scope.drivers[randomIndex].points +1
-    }); 
-*/
 
     $scope.drivers = dataService.getDrivers();
     dataService.startInterval(); 
@@ -37,6 +28,9 @@ angular
 
     $scope.getTeamName = function(teamID) {
       let team = $scope.teams.find(team => team.id === teamID);
+      if(!team) {
+        return "This team does not exist"
+      }
       return team.team; 
     };
   });

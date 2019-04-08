@@ -1,0 +1,8 @@
+
+> spawn-sync@1.0.15 postinstall C:\Users\Tata\Desktop\Holvi\Standings-testing\RacingF1-unitTesting\node_modules\spawn-sync
+> node postinstall
+
++ generator-karma@2.0.1
+added 650 packages from 660 contributors and audited 3337 packages in 58.099s
+found 10 vulnerabilities (6 low, 4 moderate)
+  run `npm audit fix` to fix them, or `npm audit` for details

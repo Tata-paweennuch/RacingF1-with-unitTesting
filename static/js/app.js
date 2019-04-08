@@ -22,7 +22,3 @@ angular
 
     $locationProvider.hashPrefix("").html5Mode(true);
   });
-/*   .config(function($interpolateProvider) {
-        $interpolateProvider.startSymbol('//').endSymbol('//');
-  });
- */
