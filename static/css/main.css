@@ -78,6 +78,10 @@
     grid-template-columns: 45% 20% 35%;
     align-items: center;
   }
+
+  .drivers-header .driver-info .driver-name:hover {
+    cursor: pointer;
+  }
   
   .drivers-header .points {
     /* border: 1px solid orangered; */

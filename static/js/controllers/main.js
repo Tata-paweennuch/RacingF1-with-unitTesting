@@ -2,7 +2,7 @@
 
 angular
   .module("standingListApp")
-  .controller("mainCtrl", function(dataService, $scope, $location, $timeout) {
+  .controller("mainCtrl", function(dataService, $scope, $location, $timeout, $q) {
 /*     
     dataService.getDrivers(function(response) {
       $scope.drivers = response.data;
@@ -17,9 +17,6 @@ angular
     dataService.startInterval(); 
  
     $scope.teams = dataService.getTeams();
-/*     dataService.getTeams(function(response) {
-      $scope.teams = response.data;
-    }); */
 
     $scope.deleteDriver = function(driver) {
       dataService.deleteDriver(driver);
@@ -40,6 +37,7 @@ angular
 
     $scope.getTeamName = function(teamID) {
       let team = $scope.teams.find(team => team.id === teamID);
-      return team.team;
+      return team.team; 
     };
   });
+

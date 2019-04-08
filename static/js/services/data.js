@@ -39,7 +39,7 @@ angular.module("standingListApp").service("dataService", function($q, $http, $ti
       console.log(randomIndex);
       drivers[randomIndex].points++
       console.log(drivers);
-    }, 1500)
+    }, 2500)
   };
 
 

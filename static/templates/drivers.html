@@ -1,5 +1,5 @@
 <div class="standing-board">
-    <header ng-init="detail = false; teamDetail = ''" ng-show="!detail">
+    <header>
         <div class="stats">
             <p><span>drivers: </span> {{ drivers.length }}</p>
             <p><span>Total points: </span> {{ sumPoints() }}</p>
@@ -7,17 +7,6 @@
         <h1>Driver Standings</h1>
         <img src="http://www.libertymedia.com/images/f1-red2x.png" alt="Smiley face" width="80">
         <!-- <img src="https://careers.formula1corporate.com/images/logo.png" alt="Smiley face" width="80"> -->
-    </header>
-
-    <header ng-show="detail">
-        <div class="stats">
-            <!-- <p><span>Number of drivers: </span> {{ drivers.length }}</p> -->
-            <p><span>Team: </span> {{ teamDetail.team }}</p>
-            <p><span>Car: </span> {{ teamDetail.car }}</p>
-            <p><span>Total points: </span> {{ sumPoints() }}</p>
-        </div>
-        <h1>Driver Standings</h1>
-        <img src="http://www.libertymedia.com/images/f1-red2x.png" alt="Smiley face" width="80">
     </header>
 
     <div class="drivers-header list-header">
@@ -39,7 +28,7 @@
                 </button>
                 <!-- <a href="#!/{{ driver.team }}">{{ driver.driver }}</a> -->
                 {{ $index + 1 }} |
-                <span ng-click="getTeam(driver.team)">
+                <span ng-click="getTeam(driver.team)" class="driver-name">
                     {{ driver.driver.split(" ")[0] }}
                     <strong>{{ driver.driver.split(" ")[1] }}</strong>
                 </span>
