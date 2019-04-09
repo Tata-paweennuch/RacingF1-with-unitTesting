@@ -1,4 +1,4 @@
-describe('MainController', function() {
+describe('StandingsController', function() {
     var teams = [
         {
             "id": 1,
@@ -27,8 +27,6 @@ describe('MainController', function() {
         }
     ];
 
-
-    // beforeEach(angular.mock.module('standingListApp'));
     beforeEach(module('standingListApp'));
 
     var $controller, $rootScope;
@@ -43,20 +41,20 @@ describe('MainController', function() {
 
         beforeEach(function() {
             $scope = {};
-            controller = $controller('mainCtrl', { $scope: $scope });
+            controller = $controller('standingsCtrl', { $scope: $scope });
         });
 
-        it('The name of the team should be "Mercedes AMG Petronas F1 Team"', function() {
+        it('should be "Mercedes AMG Petronas F1 Team"', function() {
             $scope.teams = teams;
             expect($scope.getTeamName(2)).toEqual('Mercedes AMG Petronas F1 Team');
         });
 
-        it('The name of the team should be "Mercedes PU106A Hybrid"', function() {
+        it('should be "Williams Martini Racing"', function() {
             $scope.teams = teams;
             expect($scope.getTeamName(4)).toEqual('Williams Martini Racing');
         });
 
-        it('The name of the team should be "Mercedes PU106A Hybrid"', function() {
+        it('should be "This team does not exist"', function() {
             $scope.teams = teams;
             expect($scope.getTeamName(7)).toEqual('This team does not exist');
         });

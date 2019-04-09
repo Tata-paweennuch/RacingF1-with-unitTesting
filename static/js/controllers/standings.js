@@ -2,7 +2,7 @@
 
 angular
   .module("standingListApp")
-  .controller("mainCtrl", function(dataService, $scope, $location, $timeout, $q) {
+  .controller("standingsCtrl", function(dataService, $scope, $location, $timeout, $q) {
 
     $scope.drivers = dataService.getDrivers();
     dataService.startInterval(); 

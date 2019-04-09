@@ -19,10 +19,10 @@ module.exports = function(config) {
       './static/bower_components/angular-route/angular-route.js', 
       './node_modules/angular-mocks/angular-mocks.js',  
       './static/js/app.js',
-      './static/js/controllers/main.js',
+      './static/js/controllers/standings.js',
       './static/js/controllers/team.js',
       './static/js/services/data.js',
-      './test/controller.main.spec.js',
+      './test/controller.standings.spec.js',
       './test/service.data.spec.js'
     ],
 

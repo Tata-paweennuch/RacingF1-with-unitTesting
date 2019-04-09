@@ -3,8 +3,8 @@ angular
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when("/", {
-        templateUrl: "/static/templates/drivers.html",
-        controller: "mainCtrl",
+        templateUrl: "/static/templates/standings.html",
+        controller: "standingsCtrl",
         resolve: {
           fetchAllDrivers: function(dataService) {
             return dataService.initDrivers();

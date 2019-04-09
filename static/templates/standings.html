@@ -6,10 +6,9 @@
         </div>
         <h1>Driver Standings</h1>
         <img src="http://www.libertymedia.com/images/f1-red2x.png" alt="Smiley face" width="80">
-        <!-- <img src="https://careers.formula1corporate.com/images/logo.png" alt="Smiley face" width="80"> -->
     </header>
 
-    <div class="drivers-header list-header">
+    <div class="info-row info-header">
         <div class="driver-info">
             <p>Position | Name</p>
             <p>Nationality</p>
@@ -19,14 +18,12 @@
             <p>Points</p>
         </div>
     </div>
-    <div class="drivers-header list" ng-repeat="driver in drivers | orderBy: ['-points', 'driver']">
+    <div class="info-row driver" ng-repeat="driver in drivers | orderBy: ['-points', 'driver']">
         <div class="driver-info">
-            <!-- <img src="https://requestreduce.org/images/car-racing-flags-clipart-5.png" alt="raceCar" width="80" /> -->
             <p>
                 <button class="remove-driver" ng-click="deleteDriver(driver)">
                     ✖
                 </button>
-                <!-- <a href="#!/{{ driver.team }}">{{ driver.driver }}</a> -->
                 {{ $index + 1 }} |
                 <span ng-click="getTeam(driver.team)" class="driver-name">
                     {{ driver.driver.split(" ")[0] }}

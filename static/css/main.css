@@ -27,79 +27,76 @@
     padding: 30px 10px;
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    /* background-color: #14aacf; */
     background-color: #345B80;
     border-bottom: solid 2px #d4caff;
+  }
+
+  header .stats {
+    text-align: right;
+    margin-left: 30px;
   }
   
   header h1 {
     font-size: 1.5em;
     letter-spacing: 2px;
-    font-weight: normal;
+  }
+
+  header img {
+    display: inline-block;
+    margin-right: 30px;
   }
   
-  header .stats {
-    /* border: 1px solid palegoldenrod; */
-    text-align: right;
-    /* min-width: 20%; */
-  }
-  
-  a {
+  .back-btn a {
     text-decoration: none;
+    color: #2d3339;
+    display: inline-block;
+    cursor: pointer;
+    padding: 12px;
+    transition: .5s linear .4s;
   }
 
-  .standing-board .drivers-header:nth-child(4) {
-    /* background-color: #1de45f4f; */
-    /* background-image: linear-gradient(to left bottom, #838a94, #98a5aa, #b3c0bf, #d2dad5, #f2f4ee);  } */
-    background-image: linear-gradient(to right bottom, #e8ebee, #c7cacf, #a8aab0, #8b8a92, #6f6c74);  
+  .back-btn a:hover {
+    text-decoration: underline;
+    font-weight: 600;
   }
 
-  .list-header {
-    /* background: #edeff0; */
+/* ==========================   Standings part ============================ */
+
+  .standing-board .info-header {
     background-image: linear-gradient(to right bottom, #97b1c9, #b5c3d7, #d0d6e4, #e9eaf1, #ffffff);
-    /* background-image: linear-gradient(to right bottom, #b2cce5, #cad7ec, #dee4f2, #f0f1f8, #ffffff); */
-    /* background-color: #869cb1; */
     color: rgb(92, 87, 87);
   }
   
-  .drivers-header {
+  .standing-board .driver:nth-child(3) {
+    background-image: linear-gradient(to right bottom, #e8ebee, #c7cacf, #a8aab0, #8b8a92, #6f6c74);  
+  }
+  
+  .info-row {
     display: flex;
     line-height: 2.5em;
-    /* border-bottom: solid 2px #eeeeee; */
     border-bottom: solid 4px #edeff0;
   }
   
-  .drivers-header .driver-info {
+  .info-row .driver-info {
     width: 80%;
-    /* border: 1px solid #5583ad; */
     display: grid;
-    grid-template-columns: 45% 20% 35%;
+    grid-template-columns: 37% 15% 48%;
     align-items: center;
   }
 
-  .drivers-header .driver-info .driver-name:hover {
+  .info-row .driver-info .driver-name:hover {
     cursor: pointer;
   }
   
-  .drivers-header .points {
-    /* border: 1px solid orangered; */
+  .info-row .points {
     width: 20%;
   }
   
-  .list .driver-info p:first-child {
+  .driver .driver-info p:first-child {
     text-align: left;
     padding-left: 30px;
-  }
-  
-  .drivers {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.2em;
-    border-bottom: solid 2px #eeeeee;
-    letter-spacing: 1.5px;
-    color: #5583ad;
   }
   
   .remove-driver {
@@ -118,30 +115,11 @@
     visibility: visible;
   }
   
-  /* .driver-name {
-      line-height: 3rem;
-      padding-left: 10px;
-    } */
-  
-  /* .driver-name {
-      width: 75%;
-      text-align: left;
-      padding-left: 30px;
-    } */
-  
-  .driver-name span {
-    display: inline-block;
-    margin-left: 100px;
-  }
-  
   /* ==========================   Counter part ============================ */
   
   .counter {
     width: 20%;
     display: flex;
-    /* align-items: center; */
-    /* text-align: right;
-      padding-right: 50px; */
   }
   
   .counter-action {
@@ -151,7 +129,6 @@
     font-size: 1.15em;
     font-weight: bold;
     color: #b0aeba;
-    /* background-color: #dcdcdc; */
     background-color: #ececec;
     display: block;
     padding: 10px 15px;
@@ -162,12 +139,10 @@
   }
   
   .increment:hover {
-    /* background: #83d97c; */
     background-image: linear-gradient(to right bottom, #40b95f, #3aa74d, #34953c, #2d842b, #257319);
   }
   
   .decrement:hover {
-    /* background: #ef5350; */
     background-image: linear-gradient(to right bottom, #f9376a, #e72951, #d41c39, #bf1021, #aa0707);
   }
   
