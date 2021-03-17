@@ -1,4 +1,7 @@
 # F1 Standings App
+This is an assignment that I got from Holvi before I joined the company in May 2019.
+At the time, I hadn't worked on AngularJs project before.
+
 Please find the live demo clip down below 
 
 
